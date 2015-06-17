@@ -12,7 +12,8 @@ public abstract class Personnage extends Affichable{
 	 * Constructeur 
 	 * orientation initialisée par défaut
 	 * pointsDeVie initialisé a pointsDeVieMax
-	 * etageCourant initiliasé a 0
+	 * etageCourant initialisé a 0
+	 * L'image est initialisé a selon la classe
 	 * @param position Point pour initialiser position
 	 * @param pdvMax int pour decider du nombre de points de vie  maximum 
 	 */
