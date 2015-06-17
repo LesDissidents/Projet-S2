@@ -9,7 +9,9 @@ public interface Ramassable
 	 */
 	public boolean isRamassable()
 	{
-		
+		boolean res = false;
+		/*Code*/
+		return res;
 	}
 	
 }

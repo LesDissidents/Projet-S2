@@ -13,5 +13,23 @@ public abstract class Applicable extends Entite
 		
 	}
 	
+	/**
+	* Accesseur à la clef de l'entité.
+	* @return - la clef de l'entité.
+	*/
+	public int getClef()
+	{
+		return this.clef;
+	}
+	
+	/**
+	* Accesseur a la référence de l'entité
+	* @return la valeur de la référence de l'entité
+	*/
+	public int getReference()
+	{
+		return this.reference;
+	}
+	
 }
 

@@ -9,7 +9,18 @@ public class Outil extends Entite implements Ramassable
 	 */
 	public Outil(int identifiant)
 	{
-		
+		super(identifiant);
+	}
+	
+	/**
+	 * Méthode déterminant si un objet est ramassable ou non
+	 * @return - "true" si l'objet est ramassable, "false" sinon
+	 */
+	public boolean isRamassable()
+	{
+		boolean res = false;
+		/*Code*/
+		return res;
 	}
 	
 }
