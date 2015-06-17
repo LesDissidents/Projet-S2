@@ -9,7 +9,7 @@ public class Outil extends Entite implements Ramassable
 	 */
 	public Outil(int identifiant)
 	{
-		
+		super(identifiant);
 	}
 	
 	/**
@@ -18,7 +18,9 @@ public class Outil extends Entite implements Ramassable
 	 */
 	public boolean isRamassable()
 	{
-		
+		boolean res = false;
+		/*Code*/
+		return res;
 	}
 	
 }
