@@ -1,6 +1,6 @@
 package projets2;
 
-public class Outil extends Entite
+public class Outil extends Entite implements Ramassable
 {
 	
 	/**
