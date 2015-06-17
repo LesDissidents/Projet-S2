@@ -8,7 +8,7 @@ package projets2;
  */
 public abstract class Affichable {
 
-	protected String cheminImage
+	protected String cheminImage;
 	
 	/**
 	 * Methode permettant d'afficher une image
