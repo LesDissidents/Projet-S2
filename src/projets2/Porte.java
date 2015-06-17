@@ -1,6 +1,6 @@
 package projets2;
 
-public class Porte {
+public class Porte implements Traversable{
 	
 	private boolean ouvert;
 	
@@ -15,8 +15,9 @@ public class Porte {
 	
 	/**
 	 * Méthode permettant d'ouvrir la porte.
+	 * @param ouvrir - Etat de la porte apres utilisation de la methode
 	 */
-	public void ouvrir(){
+	public void ouvrir(boolean ouvrir){
 		
 	}
 }

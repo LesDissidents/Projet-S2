@@ -1,6 +1,6 @@
 package projets2;
 
-public class Piege {
+public class Piege extends Applicable implements Traversable {
 
 	private boolean actif;
 	

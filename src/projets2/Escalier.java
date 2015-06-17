@@ -1,6 +1,6 @@
 package projets2;
 
-public class Escalier {
+public class Escalier implements Traversable{
 	private boolean monter;
 	
 	/**
@@ -9,6 +9,14 @@ public class Escalier {
 	 */
 	public Escalier(int id){
 
+	}
+	
+	/** 
+	 * Accesseur à l'attribut monter de l'escalier
+	 * @return Un boolean selon si l'escalier permet de monter ou de descendre
+	 */
+	public boolean getMonter(){
+		return this.monter;
 	}
 	
 }

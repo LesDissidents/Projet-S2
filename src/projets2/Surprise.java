@@ -1,6 +1,6 @@
 package projets2;
 
-public class Surprise {
+public class Surprise  extends Applicable {
 	
 	public int identifiant;
 	
