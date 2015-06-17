@@ -26,7 +26,7 @@ public class Case {
 	 * @return le contenu
 	 */
 	public Entite getEntite() {
-		
+		return null;
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class Case {
 	 * @return le personnage, null sinon
 	 */
 	public Personnage getPersonnage() {
-		
+		return null;
 	}
 	
 	/**
@@ -53,7 +53,7 @@ public class Case {
 	 * @return true si le déplacement est possible, false sinon
 	 */
 	public boolean deplacementPossible(Personnage perso) {
-		
+		return true;
 	}
 	
 	/**

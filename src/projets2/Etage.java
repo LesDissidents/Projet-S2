@@ -28,6 +28,6 @@ public class Etage {
 	 * @return - la case de coordonnées (x,y)
 	 */
 	public Case getCase(int x, int y) {
-		
+		return null;
 	}
 }

@@ -13,7 +13,5 @@ public interface Traversable {
 	 * 
 	 * @return - true si c'est traversable, false sinon
 	 */
-	public boolean estTraversable(Personnage personnage) {
-		
-	}
+	public boolean estTraversable(Personnage personnage);
 }
