@@ -1,5 +1,7 @@
 package projets2;
 
+import java.util.LinkedList;
+
 /**
  * Classe Partie représenté par : 
  * <ul>

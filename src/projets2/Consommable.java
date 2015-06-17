@@ -14,7 +14,7 @@ public class Consommable extends Applicable implements Ramassable {
 	 * @param identifiant - L'identifiant du consommable
 	 */
 	public Consommable(int identifiant) {
-		
+		super(identifiant);
 	}
 	
 	

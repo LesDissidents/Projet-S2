@@ -2,8 +2,8 @@ package projets2;
 
 public class Entite {
 	
-	private int clef;
-	private int reference;
+	protected int clef;
+	protected int reference;
 	
 	/**
 	 * Constructeur d'une entitée
