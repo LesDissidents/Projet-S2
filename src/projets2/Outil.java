@@ -1,6 +1,6 @@
 package projets2;
 
-public class Outil
+public class Outil extends Entite
 {
 	
 	/**

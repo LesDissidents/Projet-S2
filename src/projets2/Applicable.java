@@ -1,6 +1,6 @@
 package projets2;
 
-public abstract class Applicable
+public abstract class Applicable extends Entite
 {
 	
 	/**
