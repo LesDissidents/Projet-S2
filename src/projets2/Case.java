@@ -1,4 +1,5 @@
 package projets2;
+import java.awt.Point;
 
 /**
  * Classe Case, représenté par une entité et un personnage
@@ -8,7 +9,8 @@ package projets2;
 public class Case {
 	
 	private Entite entite;
-	private Personnage perso; 
+	private Personnage perso;
+	public static final int SIZE;
 	
 	/**
 	 * Constructeur par defaut
