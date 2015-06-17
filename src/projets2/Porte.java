@@ -1,6 +1,6 @@
 package projets2;
 
-public class Porte implements Traversable{
+public class Porte extends Entite implements Traversable{
 	
 	private boolean ouvert;
 	
@@ -9,7 +9,9 @@ public class Porte implements Traversable{
 	 * @param int - identifiant de la porte
 	 */
 	public Porte(int id){
-	
+	super(id);
+	if((((id/100)%10)) == 0) this.ouvert = false;
+	else this.ouvert = true;
 	}
 	
 	
@@ -19,6 +21,13 @@ public class Porte implements Traversable{
 	 */
 	public void ouvrir(boolean ouvrir){
 		
+	}
+	/**
+	 * Methode renvoyant true si l'instance est traversable
+	 * @return - true si l'objet est traversable et false sinon
+	 */
+	public boolean estTraversable(Personnage personnage){
+		return this.ouvert;
 	}
 }
 

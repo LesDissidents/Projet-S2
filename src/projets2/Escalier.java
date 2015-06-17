@@ -1,6 +1,6 @@
 package projets2;
 
-public class Escalier implements Traversable{
+public class Escalier extends Entite implements Traversable{
 	private boolean monter;
 	
 	/**
@@ -8,7 +8,10 @@ public class Escalier implements Traversable{
 	 * @param id - id de l'escalier
 	 */
 	public Escalier(int id){
-
+		super(id);
+		if((((id/100)%10)) == 0) this.monter = false;
+		else this.monter = true;
+		
 	}
 	
 	/** 
@@ -17,6 +20,14 @@ public class Escalier implements Traversable{
 	 */
 	public boolean getMonter(){
 		return this.monter;
+	}
+	
+	/**
+	 * Methode renvoyant true si l'instance est traversable
+	 * @return - true si l'objet est traversable
+	 */
+	public boolean estTraversable(Personnage personnage){
+		return true;
 	}
 	
 }
