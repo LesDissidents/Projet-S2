@@ -38,6 +38,6 @@ public class Partie {
 	 * @return le nombre de déplacement
 	 */
 	public int changerNbDeplacement(int nbDeplacement) {
-		
+		return 3;
 	}
 }
