@@ -1,9 +1,8 @@
+package projets2;
 
 public class Piege {
 
 	private boolean actif;
-	private int ref;
-	private int ref;
 	
 	/**
 	 * Constructeur d'un objet Piege prenant en parametre un int

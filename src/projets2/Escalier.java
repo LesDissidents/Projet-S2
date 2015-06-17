@@ -1,7 +1,6 @@
+package projets2;
 
 public class Escalier {
-	private int ref;
-	private int code;
 	private boolean monter;
 	
 	/**
@@ -9,7 +8,7 @@ public class Escalier {
 	 * @param id - id de l'escalier
 	 */
 	public Escalier(int id){
-		this.monter = monter;
+
 	}
 	
 }
