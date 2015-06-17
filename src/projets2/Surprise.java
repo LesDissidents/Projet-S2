@@ -10,6 +10,7 @@ public class Surprise  extends Applicable {
 	 */
 	public Surprise(int id){
 		super(id);
+		
 	}
 
 	/**

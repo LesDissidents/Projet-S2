@@ -20,7 +20,7 @@ public class Porte extends Entite implements Traversable{
 	 * @param ouvrir - Etat de la porte apres utilisation de la methode
 	 */
 	public void ouvrir(boolean ouvrir){
-		
+		this.ouvert = ouvrir;
 	}
 	/**
 	 * Methode renvoyant true si l'instance est traversable
