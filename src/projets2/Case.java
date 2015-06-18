@@ -73,6 +73,5 @@ public class Case {
 	public void viderCase() {
 		this.entite = null;
 		this.perso = null;
-		
 	}
 }

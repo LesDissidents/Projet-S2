@@ -1,7 +1,6 @@
 package projets2;
 
-public interface Ramassable
-{
+public interface Ramassable {
 	
 	/**
 	 * Méthode déterminant si un objet est ramassable ou non

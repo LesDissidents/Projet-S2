@@ -1,6 +1,7 @@
 package projets2;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -32,7 +33,7 @@ public class Etage {
 		this.cases = new Case[this.longueur*this.largeur] ;
 		
 		String[] id = fichier.readLine().split(" ");
-		for(int i = 0;i<id.length-1;i++){
+		for(int i = 0;i<id.length;i++){
 			int identifiant=Integer.parseInt(id[i]);
 			switch (identifiant/1000) {
 			case 0 : 
@@ -66,7 +67,7 @@ public class Etage {
 				this.cases[i] = new Case(new Surprise(identifiant));
 			break;
 			default :
-				this.cases[i] = null;
+				this.cases[i] = new Case(null);
 			}
 		}
 	}	
@@ -79,6 +80,8 @@ public class Etage {
 	 * @return - la case de coordonnées (x,y)
 	 */
 	public Case getCase(int x, int y) {
+		System.out.println((y*this.largeur+x));
+		System.out.println(this.cases.length);
 		return this.cases[(y*this.largeur+x)];
 	}
 	
@@ -97,16 +100,4 @@ public class Etage {
 	public int getLargeur() {
 		return this.largeur;
 	}
-	
-	public static void main(String[] args) {
-		Etage etage = null;
-		try {
-			etage = new Etage("src/immeuble1/etage1.txt");
-		} catch (IOException e) {
-			System.out.println("Erreur lecture de fichier");
-		}
-		Case caseyolo = etage.getCase(0,0);
-		System.out.println(caseyolo);
-	}
 }
-

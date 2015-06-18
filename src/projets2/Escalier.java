@@ -1,6 +1,7 @@
 package projets2;
 
 public class Escalier extends Entite implements Traversable{
+	
 	private boolean monter;
 	
 	/**
@@ -11,7 +12,6 @@ public class Escalier extends Entite implements Traversable{
 		super(id);
 		if((((id/100)%10)) == 0) this.monter = false;
 		else this.monter = true;
-		
 	}
 	
 	/** 

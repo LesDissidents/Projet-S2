@@ -3,6 +3,7 @@ package projets2;
 import java.awt.Point;
 
 public class Ennemi extends Personnage {
+	
 	/**
 	 * Constructeur 
 	 * orientation initialisée par défaut
@@ -14,5 +15,4 @@ public class Ennemi extends Personnage {
 	public Ennemi(Point position,int pdvMax){
 		super(position,pdvMax);
 	}
-
 }

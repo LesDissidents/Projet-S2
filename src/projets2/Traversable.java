@@ -7,7 +7,6 @@ package projets2;
  *
  */
 public interface Traversable {
-
 	/**
 	 * Retourne si l'objet est traversable par le personnage
 	 * 

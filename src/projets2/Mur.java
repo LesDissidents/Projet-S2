@@ -6,7 +6,7 @@ public class Mur extends Entite implements Traversable  {
 	 * Constructeur de l'objet mur rpenant un identifiant en paramètre
 	 * @param id - Identifiant du mur
 	 */
-	public Mur(int id){
+	public Mur(int id) {
 		super(id);
 		
 	}
@@ -15,8 +15,7 @@ public class Mur extends Entite implements Traversable  {
 	 * Methode renvoyant true si l'instance est traversable
 	 * @return - true si l'objet est traversable
 	 */
-	public boolean estTraversable(Personnage personnage){
+	public boolean estTraversable(Personnage personnage) {
 		return false;
 	}
-
 }

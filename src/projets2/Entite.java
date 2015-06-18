@@ -1,7 +1,6 @@
 package projets2;
 
 public class Entite {
-	
 	protected int clef;
 	protected int reference;
 	

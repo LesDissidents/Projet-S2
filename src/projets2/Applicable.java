@@ -1,7 +1,6 @@
 package projets2;
 
-public abstract class Applicable extends Entite
-{
+public abstract class Applicable extends Entite {
 	
 	public Applicable(int id) {
 		super(id);
@@ -18,8 +17,7 @@ public abstract class Applicable extends Entite
 	* Accesseur à la clef de l'entité.
 	* @return - la clef de l'entité.
 	*/
-	public int getClef()
-	{
+	public int getClef() {
 		return this.clef;
 	}
 	
@@ -27,10 +25,8 @@ public abstract class Applicable extends Entite
 	* Accesseur a la référence de l'entité
 	* @return la valeur de la référence de l'entité
 	*/
-	public int getReference()
-	{
+	public int getReference() {
 		return this.reference;
 	}
-	
 }
 
