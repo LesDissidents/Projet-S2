@@ -28,7 +28,9 @@ public class Partie {
 	 * @param nomBatiment - le nom de l'immeuble
 	 * @param difficulte - la difficulté
 	 */
-	public Partie(int Joueur, String nomBatiment, int difficulte) {
+	public Partie(Joueur joueur, String nomBatiment, int difficulte) {
+		this.joueur = joueur;
+		this.difficulte = difficulte;
 		
 	}
 	
@@ -39,7 +41,8 @@ public class Partie {
 	 * @param nbDeplacement - le nombre de déplacement
 	 * @return le nombre de déplacement
 	 */
-	public int changerNbDeplacement(int nbDeplacement) {
-		return 3;
+	public int changerNbDeplacement(int nbDeplacements) {
+		this.nbDeplacements = nbDeplacements;
+		return this.nbDeplacements;
 	}
 }
