@@ -1,5 +1,7 @@
 package projets2;
 
+import java.awt.Point;
+
 /**
  * Classe abstraite servant à l'affichage représenté par un chemin d'image
  * 
