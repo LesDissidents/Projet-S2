@@ -2,6 +2,8 @@ package projets2;
 
 import java.awt.Point;
 
+import org.newdawn.slick.Graphics;
+
 /**
  * Classe abstraite servant à l'affichage représenté par un chemin d'image
  * 
@@ -18,7 +20,5 @@ public abstract class Affichable {
 	 * @param point - le point où afficher l'image
 	 * @param graphic - la fenêtre du dessin
 	 */
-	public void afficher(Point point, Graphic graphic) {
-		
-	}
+	public abstract void afficher(Point point, Graphics graphic);
 }

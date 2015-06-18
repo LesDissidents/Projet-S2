@@ -2,6 +2,8 @@ package projets2;
 
 import java.awt.Point;
 
+import org.newdawn.slick.Graphics;
+
 public class Ennemi extends Personnage {
 	
 	/**
@@ -14,5 +16,10 @@ public class Ennemi extends Personnage {
 	 */
 	public Ennemi(Point position,int pdvMax){
 		super(position,pdvMax);
+	}
+
+	@Override
+	public void afficher(Point point, Graphics graphic) {
+		
 	}
 }

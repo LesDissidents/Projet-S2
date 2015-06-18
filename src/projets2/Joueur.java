@@ -3,6 +3,8 @@ package projets2;
 import java.awt.Point;
 import java.util.LinkedList;
 
+import org.newdawn.slick.Graphics;
+
 public class Joueur extends Personnage{
 	
 	private LinkedList<Ramassable> inventaire;
@@ -67,5 +69,10 @@ public class Joueur extends Personnage{
 		Boolean b=false;
 		//Valentin a toi de jouer
 		return b;
+	}
+
+	@Override
+	public void afficher(Point point, Graphics graphic) {
+		
 	}
 }

@@ -1,6 +1,10 @@
 package projets2;
 
-public class Entite {
+import java.awt.Point;
+
+import org.newdawn.slick.Graphics;
+
+public class Entite extends Affichable {
 	protected int clef;
 	protected int reference;
 	
@@ -28,6 +32,12 @@ public class Entite {
 	 */
 	public int getReference() {
 		return this.reference;
+	}
+
+
+	@Override
+	public void afficher(Point point, Graphics graphic) {
+		
 	}
 }
 	
