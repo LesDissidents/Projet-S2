@@ -34,7 +34,6 @@ public class Entite extends Affichable {
 		return this.reference;
 	}
 
-
 	@Override
 	public void afficher(Point point, Graphics graphic) {
 		

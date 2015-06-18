@@ -1,5 +1,9 @@
 package projets2;
 
+import java.awt.Point;
+
+import org.newdawn.slick.Graphics;
+
 /**
  * Classe Consommable héritant de la classe Applicable et implementant
  * l'interface Ramassable
@@ -45,5 +49,10 @@ public class Consommable extends Applicable implements Ramassable {
 	 */
 	public boolean isRamassable() {
 		return true;
+	}
+
+	@Override
+	public void afficher(Point point, Graphics graphic) {
+		
 	}
 }
