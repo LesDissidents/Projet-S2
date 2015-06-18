@@ -85,7 +85,7 @@ public class Etage {
 	/**
 	 * Donne la longueur
 	 * @return la longueur
-	 */
+	 */ 
 	public int getLongueur() {
 		return this.longueur;
 	}
