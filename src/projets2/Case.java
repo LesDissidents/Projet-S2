@@ -10,7 +10,7 @@ public class Case {
 	
 	private Entite entite;
 	private Personnage perso;
-	public static final int SIZE;
+	public static final int SIZE = 32;
 	
 	/**
 	 * Constructeur par defaut
