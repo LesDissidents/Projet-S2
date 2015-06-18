@@ -20,7 +20,7 @@ public class Joueur extends Personnage{
 	 */
 	public Joueur(Point position,int pdvMax){
 		super(position,pdvMax);
-		inventaire= new LinkedList<>();
+		this.inventaire = new LinkedList<Ramassable>();
 	}
 	
 	/**
@@ -28,7 +28,7 @@ public class Joueur extends Personnage{
 	 * @return (LinkedList) une liste remplie seulement de Ramassable
 	 */
 	public LinkedList<Ramassable> getInventaire(){
-		return new LinkedList<Ramassable>(this.inventaire);
+		return this.inventaire;
 	}
 	
 	/**
@@ -37,10 +37,8 @@ public class Joueur extends Personnage{
 	 * @return (boolean) Savoir si l'objet a été ajouté avec succés
 	 */
 	public boolean ramasserObjet(Ramassable entite){
-		boolean b=false;
 		this.inventaire.add(entite);
-		b=true;
-		return b;
+		return true;
 	}
 	
 	/**

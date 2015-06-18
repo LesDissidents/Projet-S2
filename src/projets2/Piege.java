@@ -32,18 +32,21 @@ public class Piege extends Applicable implements Traversable {
 	@Override
 	public boolean appliquerEffet(Personnage p) {
 		boolean res = false;
-		switch (this.getReference() / 10) {
-		case 0:
-			res = p.modifierPointsDeVie(-(this.getReference() % 10));
-			break;
-		case 1:
-			p.setEtat("fatigue", 50);
-			res = true;
-			break;
-		case 2:
-			res = p.setPointsDeVieMax(-(this.getReference() % 10));
-			break;
+		if(this.actif) {
+			switch (this.getReference() / 10) {
+			case 0:
+				res = p.modifierPointsDeVie(-(this.getReference() % 10));
+				break;
+			case 1:
+				p.setEtat("fatigue", 50);
+				res = true;
+				break;
+			case 2:
+				res = p.setPointsDeVieMax(-(this.getReference() % 10));
+				break;
+			}
 		}
+		this.actif = false;
 		return res;
 	}
 }

@@ -66,6 +66,7 @@ public class Etage {
 				identifiant = 6*100+ effet + valeur;
 				this.cases[i] = new Case(new Surprise(identifiant));
 			break;
+			
 			default :
 				this.cases[i] = new Case(null);
 			}
@@ -80,8 +81,6 @@ public class Etage {
 	 * @return - la case de coordonnées (x,y)
 	 */
 	public Case getCase(int x, int y) {
-		System.out.println((y*this.largeur+x));
-		System.out.println(this.cases.length);
 		return this.cases[(y*this.largeur+x)];
 	}
 	
