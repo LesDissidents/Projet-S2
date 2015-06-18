@@ -8,12 +8,11 @@ public abstract class Personnage extends Affichable {
 	protected String Etat;
 	protected int compteur;
 	protected int pointsDeVieMax;
-	
+
 	/**
 	 * ints de slick 2D BAS 208 HAUT 200 GAUCHE 203 DROITE 205
 	 */
 	protected int orientation;
-	protected int etageCourant;
 	private String etat;
 
 	/**
@@ -31,7 +30,6 @@ public abstract class Personnage extends Affichable {
 		this.pointsDeVie = pdvMax;
 		this.pointsDeVieMax = pdvMax;
 		this.orientation = 205;
-		this.etageCourant = 0;
 		this.compteur = 100;
 		this.etat = "";
 	}
@@ -95,15 +93,6 @@ public abstract class Personnage extends Affichable {
 	}
 
 	/**
-	 * Retourne l'etage actuel du personnage
-	 *
-	 * @return l'etage actuel
-	 */
-	public int getEtageCourant() {
-		return etageCourant;
-	}
-
-	/**
 	 * Permet de changer les points de vie avec un int tel que
 	 * pointsDeVie=pointsDeVie-nbPointsDeVie Renvoye false quand pointsDeVie
 	 * apsse en dessous de 0
@@ -135,6 +124,9 @@ public abstract class Personnage extends Affichable {
 	public boolean setPointsDeVieMax(int newPDVMax) {
 		boolean b = true;
 		this.pointsDeVieMax += newPDVMax;
+		if(this.pointsDeVie>this.pointsDeVieMax){
+			this.pointsDeVie=this.pointsDeVieMax;
+		}
 		if (this.pointsDeVieMax <= 0) {
 			b = false;
 		}
@@ -154,39 +146,35 @@ public abstract class Personnage extends Affichable {
 	 * @return La nouvelle position du joueur
 	 */
 	public Point deplacer(int direction, boolean deplacementPossible) {
-		try {
-			if (direction != 203 && direction != 200 && direction != 205
-					&& direction != 208) {
-				throw new Exception("direction non valable");
+		this.orientation = direction;
+		
+		if (deplacementPossible) {
+			if (direction == 203) {// left
+				position.translate(-1, 0);
 			}
-			this.orientation = direction;
-			if (deplacementPossible) {
-				if (direction == 203) {// left
-					position.translate(-1, 0);
-				}
-				if (direction == 205) {// right
-					position.translate(1, 0);
-				}
-				if (direction == 208) {// bottom
-					position.translate(0, 1);
-				}
-				if (direction == 200) {// up
-					position.translate(0, -1);
-				}
-				if (this.etat.equals("fatigue")) {
-					this.compteur -= 2;
-				} else {
-					this.compteur -= 1;
-				}
-				if (compteur <= 0) {
-					this.etat = null;
-				}
+			if (direction == 205) {// right
+				position.translate(1, 0);
 			}
-		} catch (Exception e) {
-			System.out
-					.println("La direction ne correspond pas a un int des touches");
+			if (direction == 208) {// bottom
+				position.translate(0, 1);
+			}
+			if (direction == 200) {// up
+				position.translate(0, -1);
+			}
+			/*if (this.etat.equals("fatigue")) {
+				this.compteur -= 2;
+			} else {
+				this.compteur -= 1;
+			}
+			if (compteur <= 0) {
+				this.etat = null;
+			}*/
 		}
 		Point p = new Point(position);
 		return p;
+	}
+
+	public int getPointdeVie() {
+		return this.pointsDeVie;
 	}
 }

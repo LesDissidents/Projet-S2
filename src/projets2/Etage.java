@@ -35,12 +35,12 @@ public class Etage {
 		String[] id = fichier.readLine().split(" ");
 		for(int i = 0;i<id.length;i++){
 			int identifiant=Integer.parseInt(id[i]);
-			switch (identifiant/1000) {
+			switch (identifiant/100) {
 			case 0 : 
 				this.cases[i] = new Case(new Mur(identifiant));
 			break;
 			
-			case 1 : 
+			case 10 : 
 				this.cases[i] = new Case(new Porte(identifiant));
 			break;
 			
@@ -48,11 +48,11 @@ public class Etage {
 				this.cases[i] = new Case(new Outil(identifiant));
 			break;
 			
-			case 3 : 
+			case 30 : 
 				this.cases[i] = new Case(new Piege(identifiant));
 			break;
 			
-			case 4 : 
+			case 40 : 
 				this.cases[i] = new Case(new Escalier(identifiant));
 			break;
 			
@@ -81,7 +81,7 @@ public class Etage {
 	 * @return - la case de coordonnées (x,y)
 	 */
 	public Case getCase(int x, int y) {
-		return this.cases[(y*this.largeur+x)];
+		return this.cases[(y*this.longueur+x)];
 	}
 	
 	/**

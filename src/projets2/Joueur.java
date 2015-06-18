@@ -8,6 +8,8 @@ import org.newdawn.slick.Graphics;
 public class Joueur extends Personnage{
 	
 	private LinkedList<Ramassable> inventaire;
+	private int etageCourant;
+	private boolean moving;
 	
 	/**
 	 * Constructeur 
@@ -21,6 +23,16 @@ public class Joueur extends Personnage{
 	public Joueur(Point position,int pdvMax){
 		super(position,pdvMax);
 		this.inventaire = new LinkedList<Ramassable>();
+		this.etageCourant = 0;
+	}
+	
+	/**
+	 * Retourne l'etage actuel du personnage
+	 *
+	 * @return l'etage actuel
+	 */
+	public int getEtageCourant() {
+		return this.etageCourant;
 	}
 	
 	/**
@@ -65,12 +77,20 @@ public class Joueur extends Personnage{
 	 */
 	public boolean ouvrirPorte(Porte porte){
 		Boolean b=false;
-		//Valentin a toi de jouer
+		for(Ramassable e : this.inventaire){
+			if(((Entite)e).getReference() == porte.getReference()){
+				b = true;
+			}
+		}
 		return b;
+	}
+	
+	public void isMoving(boolean moving){
+		this.moving = moving;
 	}
 
 	@Override
 	public void afficher(Point point, Graphics graphic) {
-		
+		graphic.drawImage(RessourceLoader.getImageJoueur(), (int)point.getX() * Case.SIZE, (int)point.getY() * Case.SIZE);
 	}
 }

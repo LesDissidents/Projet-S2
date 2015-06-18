@@ -27,6 +27,9 @@ public class Porte extends Entite implements Traversable{
 	 * @return - true si l'objet est traversable et false sinon
 	 */
 	public boolean estTraversable(Personnage personnage) {
+		if(personnage instanceof Joueur){
+			this.ouvrir(((Joueur)personnage).ouvrirPorte(this));
+		}
 		return this.ouvert;
 	}
 }

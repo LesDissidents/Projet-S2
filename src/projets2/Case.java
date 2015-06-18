@@ -20,6 +20,7 @@ public class Case {
 	 */
 	public Case(Entite entite) {
 		this.entite = entite;
+	
 	}
 	
 	/**
@@ -55,12 +56,11 @@ public class Case {
 	 * @return true si le déplacement est possible, false sinon
 	 */
 	public boolean deplacementPossible(Personnage perso) {
-		boolean res = false; 
-		if(this.entite instanceof Porte) {
-			Porte porte = (Porte)this.entite;
-			res = porte.estTraversable(perso);
-		} else if(this.entite instanceof Mur) {
-			res = false;
+		boolean res = false;
+		
+		if(this.entite instanceof Traversable) {
+			Traversable trav = (Traversable)this.entite;
+			res = trav.estTraversable(perso);
 		} else {
 			res = true;
 		}
@@ -72,6 +72,5 @@ public class Case {
 	 */
 	public void viderCase() {
 		this.entite = null;
-		this.perso = null;
 	}
 }

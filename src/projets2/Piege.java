@@ -11,6 +11,7 @@ public class Piege extends Applicable implements Traversable {
 	 */
 	public Piege(int id) {
 		super(id);
+		this.actif = true;
 	}
 
 	/**
@@ -33,16 +34,20 @@ public class Piege extends Applicable implements Traversable {
 	public boolean appliquerEffet(Personnage p) {
 		boolean res = false;
 		if(this.actif) {
+			System.out.println(p.getPointdeVie());
 			switch (this.getReference() / 10) {
 			case 0:
 				res = p.modifierPointsDeVie(-(this.getReference() % 10));
+				System.out.println("retirer pdv" + this.getReference() % 10);
 				break;
 			case 1:
 				p.setEtat("fatigue", 50);
 				res = true;
+				System.out.println("fatigue");
 				break;
 			case 2:
 				res = p.setPointsDeVieMax(-(this.getReference() % 10));
+				System.out.println("retirer pdvMax" + this.getReference() % 10);
 				break;
 			}
 		}

@@ -36,7 +36,7 @@ public class Entite extends Affichable {
 
 	@Override
 	public void afficher(Point point, Graphics graphic) {
-		
+		 graphic.drawImage(RessourceLoader.getImageEntite(this.clef), (int)point.getX(), (int)point.getY());
 	}
 }
 	
