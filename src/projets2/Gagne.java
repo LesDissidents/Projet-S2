@@ -24,10 +24,12 @@ public class Gagne extends BasicGameState {
 	
 	public Gagne(int id, int difficulte, String nomPartie, int nbDeplacements) {
 		this.score = nbDeplacements*100/(difficulte+1);
+		this.nomPartie = nomPartie;
+		}
 		try{
 			FileWriter fw = new FileWriter(scorePath, true);
 			BufferedWriter output = new BufferedWriter(fw);
-			output.write(this.nomPartie + " : " + score + "points");
+			output.write(this.nomPartie + " : " + score + "points\n");
 			output.flush();
 			output.close();
 			System.out.println("fichier créé");
