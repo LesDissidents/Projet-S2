@@ -130,7 +130,7 @@ public class NewGame extends BasicGameState {
 			} else {
 				if (mouseLeft) {
 					mouseLeft = false;
-					sbg.addState(new Partie(Game.game, difficulte, "NOM"));
+					sbg.addState(new Partie(Game.game, difficulte, "Maxime"));
 					sbg.getState(Game.game).init(gc, sbg);
 					sbg.enterState(Game.game);
 				}
