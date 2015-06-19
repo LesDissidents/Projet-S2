@@ -36,9 +36,10 @@ public class RessourceLoader {
 		imageDecors.put(1, new Image("ressources/images/tiles/murVertical.png"));
 		imageDecors.put(2, new Image("ressources/images/tiles/chaise.png"));
 		imageDecors.put(3, new Image("ressources/images/tiles/tableMetal.png"));
-		//imageDecors.put(4, new Image("ressources/images/tiles/toilettes.png"));
-		//imageDecors.put(5, new Image("ressources/images/tiles/machineCafe.png"));
-		//imageDecors.put(6, new Image("ressources/images/tiles/imprimante.png"));
+		imageDecors.put(4, new Image("ressources/images/tiles/toilette.jpg"));
+		imageDecors.put(5, new Image("ressources/images/tiles/coffeeMachine.png"));
+		imageDecors.put(6, new Image("ressources/images/tiles/printer.png"));
+		imageDecors.put(99, new Image("ressources/images/tiles/gg.png"));
 		
 		
 		imagePortesFermees.put(1, new Image("ressources/images/tiles/porteFermeeN.png"));
@@ -66,7 +67,7 @@ public class RessourceLoader {
 		imagePiegesActifs.put(5, new Image("ressources/images/tiles/trou.png"));
 		
 		
-		
+		imagePiegesInactifs.put(0, new Image("ressources/images/tiles/bombe.png"));
 		imagePiegesInactifs.put(1, new Image("ressources/images/tiles/piegeLoup.png"));
 		imagePiegesInactifs.put(2, new Image("ressources/images/tiles/piquesSortis.png"));
 		

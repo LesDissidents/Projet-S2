@@ -54,7 +54,7 @@ public class Piege extends Applicable implements Traversable {
 			}
 		}
 		
-		if((this.getReference() / 10) != 3 || (this.getReference() / 10) != 4){
+		if((this.getReference() / 10) != 3 && (this.getReference() / 10) != 4){
 			if(this.actif){
 				this.clef+=1;
 			}

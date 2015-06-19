@@ -44,7 +44,7 @@ public class Partie extends BasicGameState {
 			System.out.println("Fichier illisible");
 			System.exit(0);
 		}
-		this.joueur = new Joueur(new Point(1,3), 5);
+		this.joueur = new Joueur(new Point(1,15), 5);
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class Partie extends BasicGameState {
 		for (int i = 0; i < courant.getLongueur(); i++) {
 			for (int j = 0; j < courant.getLargeur(); j++) {
 				Case caseCourante = courant.getCase(i, j);
-				g.drawImage(RessourceLoader.getImageSols(1),i * Case.SIZE, j * Case.SIZE);
+				g.drawImage(RessourceLoader.getImageSols(this.immeuble[this.joueur.getEtageCourant()].getMotif()),i * Case.SIZE, j * Case.SIZE);
 				if (caseCourante.getEntite() != null) {
 					caseCourante.getEntite().afficher(new Point(i * Case.SIZE, j * Case.SIZE), g);
 				}

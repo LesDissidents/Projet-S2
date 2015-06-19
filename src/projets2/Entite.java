@@ -39,11 +39,10 @@ public class Entite extends Affichable {
 		
 		switch(this.clef){
 			case 0:
-				
 				graphic.drawImage(RessourceLoader.getImageDecors(this.reference), (int)point.getX(), (int)point.getY());
 				break;
 			case 10:
-				System.out.print(this.reference);
+				
 				graphic.drawImage(RessourceLoader.getImagePortesFermees(this.reference), (int)point.getX(), (int)point.getY());
 				break;
 			case 11:
@@ -65,6 +64,7 @@ public class Entite extends Affichable {
 				graphic.drawImage(RessourceLoader.getImageConsommables(this.reference), (int)point.getX(), (int)point.getY());
 				break;
 			case 6:
+				System.out.print(this.reference);
 				graphic.drawImage(RessourceLoader.getImageSurprises(this.reference), (int)point.getX(), (int)point.getY());
 				break;
 			/*case 7:

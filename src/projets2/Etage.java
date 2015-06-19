@@ -16,7 +16,7 @@ import java.util.Random;
 public class Etage {
 
 	private Case[] cases;
-	private String motifDeSol;
+	private int motifDeSol;
 	private int longueur;
 	private int largeur;
 	
@@ -30,7 +30,10 @@ public class Etage {
 		String[] longueurLargeur = fichier.readLine().split(" ");
 		this.longueur = Integer.parseInt(longueurLargeur[0]);
 		this.largeur = Integer.parseInt(longueurLargeur[1]);
-		this.cases = new Case[this.longueur*this.largeur] ;
+		this.motifDeSol = Integer.parseInt(longueurLargeur[2]);
+		
+		this.cases = new Case[this.longueur*this.largeur];
+		
 		
 		String[] id = fichier.readLine().split(" ");
 		for(int i = 0;i<id.length;i++){
@@ -98,5 +101,9 @@ public class Etage {
 	 */
 	public int getLargeur() {
 		return this.largeur;
+	}
+	
+	public int getMotif(){
+		return this.motifDeSol;
 	}
 }
