@@ -20,10 +20,10 @@ public class Joueur extends Personnage{
 	 * @param position Point pour initialiser position
 	 * @param pdvMax int pour decider du nombre de points de vie  maximum 
 	 */
-	public Joueur(Point position,int pdvMax){
+	public Joueur(Point position,int pdvMax, int etageCourant){
 		super(position,pdvMax);
 		this.inventaire = new LinkedList<Ramassable>();
-		this.etageCourant = 0;
+		this.etageCourant = etageCourant;
 	}
 	
 	/**

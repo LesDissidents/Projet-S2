@@ -1,6 +1,8 @@
 package projets2;
 
+import java.io.File;
 import java.util.Scanner;
+
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 

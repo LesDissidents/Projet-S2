@@ -1,7 +1,10 @@
 package projets2;
 
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import org.newdawn.slick.GameContainer;
@@ -12,7 +15,6 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class Partie extends BasicGameState {
-	private boolean console;
 	private Joueur joueur;
 	private Etage[] immeuble;
 	private int difficulte;
@@ -23,28 +25,39 @@ public class Partie extends BasicGameState {
 	private int id;
 
 	public Partie(int id, int difficulte, String nom) {
-		
 		this.id = id;
 		this.difficulte = difficulte;
 		this.nomPartie = nom;
-		/*
-		 this.immeuble = new Etage[3]; try { for (int i = 0; i <
-		 this.immeuble.length; i++) { this.immeuble[i] = new Etage(pathMaps +
-		 "etage" + i + ".txt"); } } catch (FileNotFoundException e) {
-		 System.exit(0); } catch (IOException e) { System.exit(0); }
-		 */
-		 
-		this.immeuble = new Etage[1];
+		
+		File[] files = new File("ressources/map/immeuble1").listFiles();
+		this.immeuble = new Etage[files.length];
+		
+		for(int i = 0; i < this.immeuble.length; i++) {
+			System.out.println(files[i].getName());
+			
+			try {
+				this.immeuble[i] = new Etage(Partie.pathMaps + "immeuble1/etage" + i + ".txt");
+			} catch (IOException e) {
+				System.out.println("Fichier introuvable ou corrompu");
+				System.exit(0);
+			}
+		}
+		
+		for(Etage e : this.immeuble) System.out.println(e);
+		
+		int etageDepart = 0;
+		String[] coordDepart = null;
+		
 		try {
-			this.immeuble[0] = new Etage(Partie.pathMaps + "immeuble1/etage1.txt");
-		} catch (FileNotFoundException e) {
-			System.out.println("Fichier introuvable");
-			System.exit(0);
+			BufferedReader fichier = new BufferedReader(new FileReader("ressources/map/spawn/spawn1.txt"));
+			etageDepart = Integer.parseInt(fichier.readLine());
+			coordDepart = fichier.readLine().split(" ");
 		} catch (IOException e) {
-			System.out.println("Fichier illisible");
+			System.out.println("Fichier introuvable ou corrompu");
 			System.exit(0);
 		}
-		this.joueur = new Joueur(new Point(1,15), 5);
+		
+		this.joueur = new Joueur(new Point(Integer.parseInt(coordDepart[0]),Integer.parseInt(coordDepart[1])), 5, etageDepart);
 	}
 
 	@Override
