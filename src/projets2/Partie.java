@@ -36,7 +36,7 @@ public class Partie extends BasicGameState {
 		 
 		this.immeuble = new Etage[1];
 		try {
-			this.immeuble[0] = new Etage(Partie.pathMaps + "immeuble1/etage0.txt");
+			this.immeuble[0] = new Etage(Partie.pathMaps + "immeuble1/etage1.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Fichier introuvable");
 			System.exit(0);
@@ -44,7 +44,7 @@ public class Partie extends BasicGameState {
 			System.out.println("Fichier illisible");
 			System.exit(0);
 		}
-		this.joueur = new Joueur(new Point(2,1), 5);
+		this.joueur = new Joueur(new Point(1,15), 5);
 	}
 
 	@Override

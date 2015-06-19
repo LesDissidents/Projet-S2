@@ -20,6 +20,7 @@ public class RessourceLoader {
 		imageEntite.put(5, new Image("ressources/images/tiles/cafe.png"));
 		imageEntite.put(7, new Image("ressources/images/tiles/sol.png"));
 		imageEntite.put(8, new Image("ressources/images/tiles/masqueGaz.png"));
+		imageEntite.put(6, new Image("ressources/images/tiles/cadeau.png"));
 		imageJoueur = new Image("ressources/images/tiles/joueur.png");
 	}
 
