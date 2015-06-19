@@ -1,9 +1,11 @@
-package projets2;
+package projets2.affichage;
 
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.*;
 import org.newdawn.slick.gui.TextField;
 import org.newdawn.slick.state.*;
+
+import projets2.Partie;
 
 public class NewGame extends BasicGameState {
 	private int id;

@@ -10,16 +10,15 @@ public class Porte extends Entite implements Traversable{
 	 */
 	public Porte(int id) {
 		super(id);
-		if((((id/100)%10)) == 0) this.ouvert = false;
-		else this.ouvert = true;
+		this.ouvert = false;
 	}
 	
 	/**
 	 * Méthode permettant d'ouvrir la porte.
 	 * @param ouvrir - Etat de la porte apres utilisation de la methode
 	 */
-	public void ouvrir(boolean ouvrir) {
-		this.ouvert = ouvrir;
+	public boolean ouvrir(boolean ouvrir) {
+		return this.ouvert = ouvrir;
 	}
 	
 	/**
@@ -28,7 +27,10 @@ public class Porte extends Entite implements Traversable{
 	 */
 	public boolean estTraversable(Personnage personnage) {
 		if(personnage instanceof Joueur){
-			this.ouvrir(((Joueur)personnage).ouvrirPorte(this));
+			boolean inc = this.ouvert;
+			if(this.ouvrir(((Joueur)personnage).ouvrirPorte(this)) && !inc) {
+				this.clef += 1;
+			}
 		}
 		return this.ouvert;
 	}

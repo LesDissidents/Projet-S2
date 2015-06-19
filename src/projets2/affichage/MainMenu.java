@@ -1,4 +1,4 @@
-package projets2;
+package projets2.affichage;
 
 import java.awt.Dimension;
 import org.lwjgl.input.*;

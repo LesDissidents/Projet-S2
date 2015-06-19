@@ -1,12 +1,12 @@
-package projets2;
+package projets2.affichage;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
-public class Score extends BasicGameState {
+public class Option extends BasicGameState {
 	private int id;
 
-	public Score(int id) {
+	public Option(int id) {
 		this.id = id;
 	}
 
@@ -18,7 +18,7 @@ public class Score extends BasicGameState {
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		g.drawString("Ceci est la fenetre de score", 100, 100);
+		g.drawString("Ceci est la fenetre d'option", 100, 100);
 	}
 
 	@Override

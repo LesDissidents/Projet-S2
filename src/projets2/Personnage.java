@@ -161,14 +161,6 @@ public abstract class Personnage extends Affichable {
 			if (direction == 200) {// up
 				position.translate(0, -1);
 			}
-			/*if (this.etat.equals("fatigue")) {
-				this.compteur -= 2;
-			} else {
-				this.compteur -= 1;
-			}
-			if (compteur <= 0) {
-				this.etat = null;
-			}*/
 		}
 		Point p = new Point(position);
 		return p;
