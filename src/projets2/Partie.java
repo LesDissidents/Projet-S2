@@ -1,13 +1,16 @@
 package projets2;
 
+
 import java.awt.Point;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -65,6 +68,7 @@ public class Partie extends BasicGameState {
 			}
 		}
 		this.joueur.afficher(this.joueur.getPosition(), g);
+		this.afficherPointsDeVie(g);
 	}
 
 	@Override
@@ -142,5 +146,16 @@ public class Partie extends BasicGameState {
 	public int changerNbDeplacement(int nbDeplacements) {
 		this.nbDeplacements = nbDeplacements;
 		return this.nbDeplacements;
+	}
+	
+	public void afficherPointsDeVie(Graphics g)
+	{
+		Rectangle barreVie = new Rectangle(805, 805, ( 118*joueur.getPointdeVie() ) / joueur.getPointDeVieMax(), 22);
+		String pv = ( joueur.getPointdeVie() ) + " / " + joueur.getPointDeVieMax();
+		g.drawString(pv, 830, 830 );
+		g.drawImage(RessourceLoader.getImagePvVide(), 800, 800);
+		g.setColor(Color.red);
+		g.fill(barreVie);
+		g.draw(barreVie);
 	}
 }

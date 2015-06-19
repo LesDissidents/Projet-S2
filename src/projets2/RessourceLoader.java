@@ -7,6 +7,8 @@ import org.newdawn.slick.SlickException;
 public class RessourceLoader {
 	private static HashMap<Integer, Image> imageEntite;
 	private static Image imageJoueur;
+	private static Image imagePvVide;
+	private static Image imagePvVie;
 
 	public static void initRessources() throws SlickException {
 		imageEntite = new HashMap<Integer, Image>();
@@ -22,6 +24,8 @@ public class RessourceLoader {
 		imageEntite.put(8, new Image("ressources/images/tiles/masqueGaz.png"));
 		imageEntite.put(6, new Image("ressources/images/tiles/cadeau.png"));
 		imageJoueur = new Image("ressources/images/tiles/joueur.png");
+		imagePvVide = new Image("ressources/images/vi/barreVide.png");
+		imagePvVie = new Image("ressources/images/vi/barreVie.png");
 	}
 
 	public static Image getImageEntite(int clef) {
@@ -30,5 +34,15 @@ public class RessourceLoader {
 
 	public static Image getImageJoueur() {
 		return imageJoueur;
+	}
+	
+	public static Image getImagePvVide()
+	{
+		return imagePvVide;
+	}
+	
+	public static Image getImagePvVie()
+	{
+		return imagePvVie;
 	}
 }
