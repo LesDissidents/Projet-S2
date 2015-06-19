@@ -15,6 +15,11 @@ import projets2.Ramassable;
 
 public class Rendu {
 	
+	/**
+	 * Affiche l'étage dans lequel se trouve la joueur
+	 * @param p - la partie courante
+	 * @param g - la fenetre de dessin
+	 */
 	public static void afficherEtage(Partie p, Graphics g) {
 		Etage courant = p.getEtage(p.getJoueur().getEtageCourant());
 		
@@ -30,10 +35,20 @@ public class Rendu {
 		}
 	}
 	
+	/**
+	 * Affiche le joueur
+	 * @param p - la partie courante
+	 * @param g - la fenetre de dessin
+	 */
 	public static void afficherJoueur(Partie p, Graphics g) {
 		p.getJoueur().afficher(p.getJoueur().getPosition(), g);
 	}
 	
+	/**
+	 * Affiche l'inventaire du joueur
+	 * @param p - la partie courante
+	 * @param g - la fenetre de dessin
+	 */
 	public static void afficherInventaire(Partie p, Graphics g) {
 		Point pos = new Point(100, 600);
 		g.drawImage(RessourceLoader.getImageInventaire(), 100, 600);
@@ -44,14 +59,19 @@ public class Rendu {
 		}
 	}
 	
+	/**
+	 * Affiche la barre de points de vie et le nombre de déplacement du joueur
+	 * @param p - la partie courante
+	 * @param g - la fenetre de dessin
+	 */
 	public static void afficherInformationsJoueur(Partie p, Graphics g) {
 		Joueur j = p.getJoueur();
 		g.drawString("NbDeplacement : " + p.getNbDeplacement(), 700,400);
 		
-		Rectangle barreVie = new Rectangle(805, 805, ( 118* j.getPointdeVie() ) / j.getPointDeVieMax(), 22);
+		Rectangle barreVie = new Rectangle(705, 805, ( 118* j.getPointdeVie() ) / j.getPointDeVieMax(), 22);
 		String pv = (j.getPointdeVie() ) + " / " + j.getPointDeVieMax();
 		g.drawString(pv, 830, 830 );
-		g.drawImage(RessourceLoader.getImagePvVide(), 800, 800);
+		g.drawImage(RessourceLoader.getImagePvVide(), 700, 800);
 		g.setColor(Color.red);
 		g.fill(barreVie);
 		g.draw(barreVie);

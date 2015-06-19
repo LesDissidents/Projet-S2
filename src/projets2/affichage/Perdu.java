@@ -13,27 +13,23 @@ public class Perdu extends BasicGameState {
 	private String nomPartie;
 
 	public Perdu(int id, int difficulte, String nomPartie) {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1)
-			throws SlickException {
-		// TODO Auto-generated method stub
+	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
 
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
-			throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawString("Vous avez perdu! Dommage!", 100, 100);
 		g.drawString("Appuyer sur echap pour retourner au menu", 300, 300);
 
 	}
 
 	@Override
-	public void update(GameContainer gc, StateBasedGame sbg, int delta)
-			throws SlickException {
+	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
 		Input input = gc.getInput();
 		if (input.isKeyDown(Input.KEY_ESCAPE)) {
 			sbg.enterState(Game.menu);

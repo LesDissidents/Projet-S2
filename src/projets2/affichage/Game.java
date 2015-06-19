@@ -1,8 +1,5 @@
 package projets2.affichage;
 
-import java.io.File;
-import java.util.Scanner;
-
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
@@ -13,9 +10,10 @@ public class Game extends StateBasedGame {
 	public static final int score = 3;
 	public static final int game = 4;
 	public static final int option = 5;
-	public static int DimX, DimY;
 	public static final int perdu = 6;
 	public static final int gagne = 7;
+	
+	public static int DimX, DimY;
 
 	public Game(String gameName) {
 		super(gameName);

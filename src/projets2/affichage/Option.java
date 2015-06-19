@@ -11,19 +11,16 @@ public class Option extends BasicGameState {
 	}
 
 	@Override
-	public void init(GameContainer gc, StateBasedGame sbg)
-			throws SlickException {
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
-			throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawString("Ceci est la fenetre d'option", 100, 100);
 	}
 
 	@Override
-	public void update(GameContainer gc, StateBasedGame sbg, int delta)
-			throws SlickException {
+	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
 		Input input = gc.getInput();
 		if (input.isKeyDown(Input.KEY_ESCAPE)) {
 			sbg.enterState(Game.menu);

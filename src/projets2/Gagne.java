@@ -16,6 +16,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.GameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import projets2.affichage.Game;
+
 public class Gagne extends BasicGameState {
 	private int score;
 	private String nomPartie;
@@ -25,7 +27,7 @@ public class Gagne extends BasicGameState {
 	public Gagne(int id, int difficulte, String nomPartie, int nbDeplacements) {
 		this.score = nbDeplacements*100/(difficulte+1);
 		this.nomPartie = nomPartie;
-		}
+		
 		try{
 			FileWriter fw = new FileWriter(scorePath, true);
 			BufferedWriter output = new BufferedWriter(fw);
@@ -72,7 +74,7 @@ public class Gagne extends BasicGameState {
 	}
 
 	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
+	public void update(GameContainer gc, StateBasedGame sbg, int arg2)
 			throws SlickException {
 		Input input = gc.getInput();
 		if (input.isKeyDown(Input.KEY_ESCAPE)) {

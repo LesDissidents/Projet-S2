@@ -10,8 +10,7 @@ import projets2.Partie;
 public class NewGame extends BasicGameState {
 	private int id;
 	private boolean selectedDF, selectedDN, selectedDD, selectedGame;
-	Image largeButton, largeButtonActive, largeButtonPressed, mainMenuBox,
-			background;
+	private Image largeButton, largeButtonActive, largeButtonPressed, mainMenuBox;
 	private boolean mouseLeft = false;
 	private int difficulte;
 
@@ -20,21 +19,15 @@ public class NewGame extends BasicGameState {
 	}
 
 	@Override
-	public void init(GameContainer gc, StateBasedGame sbg)
-			throws SlickException {
-		this.largeButton = new Image(
-				"ressources/images/buttons/largeButton.png");
-		this.largeButtonActive = new Image(
-				"ressources/images/buttons/largeButtonActive.png");
-		this.largeButtonPressed = new Image(
-				"ressources/images/buttons/largeButtonPressed.png");
-		this.mainMenuBox = new Image(
-				"ressources/images/dialogs/mainMenuBox.png");
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+		this.largeButton = new Image("ressources/images/buttons/largeButton.png");
+		this.largeButtonActive = new Image("ressources/images/buttons/largeButtonActive.png");
+		this.largeButtonPressed = new Image("ressources/images/buttons/largeButtonPressed.png");
+		this.mainMenuBox = new Image("ressources/images/dialogs/mainMenuBox.png");
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
-			throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 		g.drawString("Difficulté", Game.DimX / 2 - 100, 50);
 		if (selectedDF) {
 			if (mouseLeft) {
@@ -45,6 +38,7 @@ public class NewGame extends BasicGameState {
 		} else {
 			g.drawImage(largeButton, 100, 100);
 		}
+		
 		g.drawString("Facile", 115, 115);
 		if (selectedDN) {
 			if (mouseLeft) {
@@ -55,6 +49,7 @@ public class NewGame extends BasicGameState {
 		} else {
 			g.drawImage(largeButton, 350, 100);
 		}
+		
 		g.drawString("Normale", 365, 115);
 		if (selectedDD) {
 			if (mouseLeft) {
@@ -65,6 +60,7 @@ public class NewGame extends BasicGameState {
 		} else {
 			g.drawImage(largeButton, 650, 100);
 		}
+		
 		g.drawString("Difficile", 665, 115);
 		if (selectedGame) {
 			if (mouseLeft) {
@@ -79,11 +75,11 @@ public class NewGame extends BasicGameState {
 	}
 
 	@Override
-	public void update(GameContainer gc, StateBasedGame sbg, int delta)
-			throws SlickException {
-		int posX = Mouse.getX(); // 0,0 bottom corner
-		int posY = Game.DimY - Mouse.getY(); // résolution de cela
+	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+		int posX = Mouse.getX();
+		int posY = Game.DimY - Mouse.getY();
 		Input input = gc.getInput();
+		
 		if (posX > 100 && posX < 300 && posY > 100 && posY < 154) {
 			selectedDF = true;
 			if (input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON)) {

@@ -20,7 +20,7 @@ public class Gagne extends BasicGameState {
 	private int score;
 	private String nomPartie;
 	private int id;
-	public static final String scorePath ="ressources/score.txt";
+	public static final String scorePath = "ressources/score.txt";
 	
 	public Gagne(int id, int difficulte, String nomPartie, int nbDeplacements) {
 		this.score = nbDeplacements*100/(difficulte+1);
@@ -40,15 +40,12 @@ public class Gagne extends BasicGameState {
 	}
 
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1)
-			throws SlickException {
-		// TODO Auto-generated method stub
+	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
 		
 	}
 
 	@Override
-	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g)
-			throws SlickException {
+	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g) throws SlickException {
 		g.drawString("Bravo, "+nomPartie+"! Vous avez gagné avec : " + score + " points !", 100, 100);
 		g.drawString("Tableau des scores :", 100,200);
 		String chaine="";
@@ -70,9 +67,7 @@ public class Gagne extends BasicGameState {
 	}
 
 	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
-			throws SlickException {
-		// TODO Auto-generated method stub
+	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
 		
 	}
 
