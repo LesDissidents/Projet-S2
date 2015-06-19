@@ -19,6 +19,21 @@ public class Score extends BasicGameState {
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		g.drawString("Ceci est la fenetre de score", 100, 100);
+		String chaine="";
+		try{
+			InputStream ips=new FileInputStream(Gagne.scorePath); 
+			InputStreamReader ipsr=new InputStreamReader(ips);
+			BufferedReader br=new BufferedReader(ipsr);
+			String ligne;
+			while((ligne=br.readLine())!=null){
+				chaine+= ligne +"\n";
+			}
+			br.close();
+		}		
+		catch (Exception e){
+			System.out.println(e.toString());
+		}
+		g.drawString(chaine, 100,300);
 	}
 
 	@Override
