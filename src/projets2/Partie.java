@@ -78,6 +78,14 @@ public class Partie extends BasicGameState {
 			}
 		}
 		this.joueur.afficher(this.joueur.getPosition(), g);
+		
+		//Affichage de l'inventaire
+		Point p = new Point(100,600);
+		g.drawImage(RessourceLoader.getImageInventaire(), 100, 600);
+		for(Ramassable r : this.joueur.getInventaire()) {
+			((Entite)r).afficher(p, g);
+			p.move((int)p.getX() + 38, (int)p.getY());
+		}
 	}
 
 	@Override
