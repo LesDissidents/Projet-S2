@@ -121,8 +121,15 @@ public class Partie extends BasicGameState {
 					// GAME OVER !!!!!!!!!!!!!!!
 				}
 			}else if(e instanceof Escalier){
-				
-				//////////////////////////////////////////// TODO /////////////////////////////////
+				//modification de l'etage
+				if(((Escalier) e).getMonter()){
+					this.joueur.setEtageCourant(this.joueur.getEtageCourant()-1);
+					
+				}else{
+					this.joueur.setEtageCourant(this.joueur.getEtageCourant()-1);
+				}
+				//modification de l'emplacement
+				this.joueur.setPosition(this.immeuble[this.joueur.getEtageCourant()].getPointCaseEscalier(e.getReference()));
 			}
 		}
 	}

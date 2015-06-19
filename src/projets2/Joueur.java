@@ -34,6 +34,13 @@ public class Joueur extends Personnage{
 	public int getEtageCourant() {
 		return this.etageCourant;
 	}
+	/**
+	 * Permet de changer l'etage
+	 * @param etage le nouvel etage
+	 */
+	public void setEtageCourant(int etage) {
+		this.etageCourant=etage;
+	}
 	
 	/**
 	 * Renvoye l'inventaire sous forme de liste chainée

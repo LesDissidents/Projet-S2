@@ -73,8 +73,14 @@ public abstract class Personnage extends Affichable {
 		this.etat = s;
 		this.compteur += i;
 	}
-
 	/**
+	 * Permet de teleporter le joueur (utilisé avec les escaliers)
+	 * @param p un point pour changer la position du joueur
+	 */
+	public void setPosition(Point p){
+		this.position.setLocation(p);
+	}
+	/** 
 	 * Renvoye les points de vie maximums
 	 *
 	 * @return (int) Les points de vie max

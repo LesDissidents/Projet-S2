@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
+import java.awt.Point;
 
 /**
  * Etage représenté par des cases et un motif de sol
@@ -52,7 +53,7 @@ public class Etage {
 				this.cases[i] = new Case(new Piege(identifiant));
 			break;
 			
-			case 40 : 
+			case 40 : case 41 :
 				this.cases[i] = new Case(new Escalier(identifiant));
 			break;
 			
@@ -98,5 +99,21 @@ public class Etage {
 	 */
 	public int getLargeur() {
 		return this.largeur;
+	}
+	/** 
+	 * retourne l'index de la case escalier recherchée
+	 * @param reference =reference de l'objet cherché
+	 * @return emplacement de la case
+	 */
+	public Point getPointCaseEscalier(int reference){
+		int index=-1;
+		for(int i=0;i<this.cases.length||index!=-1;i++){
+			if(cases[i].getEntite()!=null){
+				if(cases[i].getEntite().getReference()==reference){
+					index=i;
+				}
+			}
+		}
+		return new Point(index/this.longueur,index%this.longueur);
 	}
 }
