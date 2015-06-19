@@ -40,19 +40,19 @@ public class Etage {
 				this.cases[i] = new Case(new Mur(identifiant));
 			break;
 			
-			case 10 : 
+			case 10 : case 11 :
 				this.cases[i] = new Case(new Porte(identifiant));
 			break;
 			
-			case 2 : 
+			case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: 
 				this.cases[i] = new Case(new Outil(identifiant));
 			break;
 			
-			case 30 : 
+			case 30 : case 31 :
 				this.cases[i] = new Case(new Piege(identifiant));
 			break;
 			
-			case 40 : 
+			case 40 : case 41:
 				this.cases[i] = new Case(new Escalier(identifiant));
 			break;
 			

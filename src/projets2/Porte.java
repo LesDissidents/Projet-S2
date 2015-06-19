@@ -2,7 +2,7 @@ package projets2;
 
 public class Porte extends Entite implements Traversable{
 	
-	private boolean ouvert;
+	private boolean ouvert = false;
 	
 	/**
 	 * Constructeur d'un objet porte qui un int en paramètre
@@ -10,16 +10,20 @@ public class Porte extends Entite implements Traversable{
 	 */
 	public Porte(int id) {
 		super(id);
-		if((((id/100)%10)) == 0) this.ouvert = false;
-		else this.ouvert = true;
+		/*if((((id/100)%10)) == 0){
+			this.ouvert = false;
+		}else{
+			this.ouvert = true;
+		}*/
 	}
 	
 	/**
 	 * Méthode permettant d'ouvrir la porte.
 	 * @param ouvrir - Etat de la porte apres utilisation de la methode
 	 */
-	public void ouvrir(boolean ouvrir) {
+	public boolean ouvrir(boolean ouvrir) {
 		this.ouvert = ouvrir;
+		return this.ouvert;
 	}
 	
 	/**
@@ -28,7 +32,10 @@ public class Porte extends Entite implements Traversable{
 	 */
 	public boolean estTraversable(Personnage personnage) {
 		if(personnage instanceof Joueur){
-			this.ouvrir(((Joueur)personnage).ouvrirPorte(this));
+			boolean inc = this.ouvert;
+			if(this.ouvrir(((Joueur)personnage).ouvrirPorte(this)) && !inc){
+				this.clef += 1;
+			}
 		}
 		return this.ouvert;
 	}

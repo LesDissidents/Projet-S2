@@ -78,7 +78,7 @@ public class Joueur extends Personnage{
 	public boolean ouvrirPorte(Porte porte){
 		Boolean b=false;
 		for(Ramassable e : this.inventaire){
-			if(((Entite)e).getReference() == porte.getReference()){
+			if(((Entite)e).getReference() == (porte.getReference())%10){
 				b = true;
 			}
 		}
