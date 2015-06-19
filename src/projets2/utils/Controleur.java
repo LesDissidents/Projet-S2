@@ -15,6 +15,12 @@ import projets2.Ramassable;
 
 public class Controleur {
 	
+	/**
+	 * Effectue le deplacement du joueur si celui-ci est possible
+	 * 
+	 * @param p - la partie
+	 * @param toucheClavier - la touche du clavier qui a été activé
+	 */
 	public static void informerDeplacement(Partie p, int toucheClavier) {
 		Joueur j = p.getJoueur();
 		Point position = j.getPosition();
@@ -49,6 +55,11 @@ public class Controleur {
 		}
 	}
 	
+	/**
+	 * Active la tuile sur laquelle le joueur s'est déplacé
+	 * 
+	 * @param p - la partie
+	 */
 	public static void activerCase(Partie p) {
 		Joueur j = p.getJoueur();
 		Etage courant = p.getEtage(j.getEtageCourant());
@@ -60,7 +71,9 @@ public class Controleur {
 		Case tuile = courant.getCase(x, y);
 		tuile.affecterPersonnage(j);
 		Entite e = tuile.getEntite();
-		
+		if(e!=null && e.getClef() == 0 && e.getReference() == 99){
+			p.setEtatPartie(true);
+		}
 		if (e instanceof Ramassable) {
 			j.ramasserObjet((Ramassable) e);
 			tuile.viderCase();

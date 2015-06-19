@@ -1,4 +1,4 @@
-package projets2.affichage;
+﻿package projets2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -27,7 +27,7 @@ public class Gagne extends BasicGameState {
 		try{
 			FileWriter fw = new FileWriter(scorePath, true);
 			BufferedWriter output = new BufferedWriter(fw);
-			output.write(this.nomPartie + " : " + score + "points\n");
+			output.write(this.nomPartie + " : " + score + "points");
 			output.flush();
 			output.close();
 			System.out.println("fichier créé");
@@ -50,7 +50,7 @@ public class Gagne extends BasicGameState {
 	public void render(GameContainer arg0, StateBasedGame arg1, Graphics g)
 			throws SlickException {
 		g.drawString("Bravo, "+nomPartie+"! Vous avez gagné avec : " + score + " points !", 100, 100);
-		g.drawString("Tableau des scores :", 100,200);
+		g.drawString("Tableau des scores :", 100,300);
 		String chaine="";
 		try{
 			InputStream ips=new FileInputStream(Gagne.scorePath); 
@@ -58,7 +58,7 @@ public class Gagne extends BasicGameState {
 			BufferedReader br=new BufferedReader(ipsr);
 			String ligne;
 			while((ligne=br.readLine())!=null){
-				chaine+=ligne +"\n";
+				chaine+= ligne +"\n";
 			}
 			br.close();
 		}		
@@ -78,7 +78,7 @@ public class Gagne extends BasicGameState {
 
 	@Override
 	public int getID() {
-		return 7;
+		return this.id;
 	}
 
 

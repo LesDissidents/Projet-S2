@@ -11,7 +11,6 @@ public class Joueur extends Personnage {
 
 	private LinkedList<Ramassable> inventaire;
 	private int etageCourant;
-	private boolean moving;
 
 	/**
 	 * Constructeur Inventaire LinketList initialisé et vide. orientation
@@ -83,8 +82,7 @@ public class Joueur extends Personnage {
 	 * Permet d'utiliser un objet dans l'inventaire. si l'objet est un outil, il
 	 * est conservé. si l'objet n'est pas un outil, il est supprimé.
 	 * 
-	 * @param reference
-	 *            un emplacement dans la liste chainée Inventaire
+	 * @param reference - un emplacement dans la liste chainée Inventaire
 	 */
 	public void utiliserObjet(int reference) {
 		Ramassable e = this.inventaire.get(reference);
@@ -106,7 +104,7 @@ public class Joueur extends Personnage {
 	 * @return un boolean pour savoir si c'est portes ouvertes aujourdhui
 	 */
 	public boolean ouvrirPorte(Porte porte) {
-		Boolean b = false;
+		boolean b = false;
 		for (Ramassable e : this.inventaire) {
 			if (((Entite) e).getReference() == porte.getReference() % 10) {
 				b = true;
@@ -114,14 +112,18 @@ public class Joueur extends Personnage {
 		}
 		return b;
 	}
-
-	public void isMoving(boolean moving) {
-		this.moving = moving;
+	
+	public boolean haveItem(int clef) {
+		for(Ramassable item : this.inventaire) {
+			if(((Entite) item).getClef() == clef) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
 	public void afficher(Point point, Graphics graphic) {
-		graphic.drawImage(RessourceLoader.getImageJoueur(), (int) point.getX()
-				* Case.SIZE, (int) point.getY() * Case.SIZE);
+		graphic.drawImage(RessourceLoader.getImageJoueur(), (int) point.getX() * Case.SIZE, (int) point.getY() * Case.SIZE);
 	}
 }

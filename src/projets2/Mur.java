@@ -16,6 +16,10 @@ public class Mur extends Entite implements Traversable  {
 	 * @return - true si l'objet est traversable
 	 */
 	public boolean estTraversable(Personnage personnage) {
-		return false;
+		boolean res = false;
+		if(this.reference == 99){
+			res = true;
+		}
+		return res;
 	}
 }

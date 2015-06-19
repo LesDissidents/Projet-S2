@@ -18,6 +18,7 @@ public class Etage {
 	private Case[] cases;
 	private int longueur;
 	private int largeur;
+	private int motifDeSol;
 
 	/**
 	 * Constructeur par defaut. initialise le chemin du fichier de l'étage
@@ -29,6 +30,8 @@ public class Etage {
 		String[] longueurLargeur = fichier.readLine().split(" ");
 		this.longueur = Integer.parseInt(longueurLargeur[0]);
 		this.largeur = Integer.parseInt(longueurLargeur[1]);
+		this.motifDeSol = Integer.parseInt(longueurLargeur[2]);
+		
 		this.cases = new Case[this.longueur * this.largeur];
 
 		String[] id = fichier.readLine().split(" ");
@@ -92,6 +95,15 @@ public class Etage {
 	 */
 	public int getLargeur() {
 		return this.largeur;
+	}
+	
+	/**
+	 * Retourne l'identifiant du modif de sol
+	 * 
+	 * @return le motif
+	 */
+	public int getMotif() {
+		return this.motifDeSol;
 	}
 
 	/**

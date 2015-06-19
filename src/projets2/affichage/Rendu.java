@@ -21,7 +21,7 @@ public class Rendu {
 		for (int i = 0; i < courant.getLongueur(); i++) {
 			for (int j = 0; j < courant.getLargeur(); j++) {
 				Case caseCourante = courant.getCase(i, j);
-				g.drawImage(RessourceLoader.getImageSols(1),i * Case.SIZE, j * Case.SIZE);
+				g.drawImage(RessourceLoader.getImageSols(courant.getMotif()),i * Case.SIZE, j * Case.SIZE);
 				
 				if (caseCourante.getEntite() != null) {
 					caseCourante.getEntite().afficher(new Point(i * Case.SIZE, j * Case.SIZE), g);

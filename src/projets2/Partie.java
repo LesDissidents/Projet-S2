@@ -34,6 +34,12 @@ public class Partie extends BasicGameState {
 
 	public static final String pathMaps = "ressources/map/";
 
+	/**
+	 * Créé une partie de la difficulté choisi avec un nom donné
+	 * @param id - identifiant de la fenetre de Slick2D
+	 * @param difficulte - difficulté de la partie
+	 * @param nom - nom de la partie
+	 */
 	public Partie(int id, int difficulte, String nom) {
 		this.id = id;
 		this.difficulte = difficulte;
@@ -87,7 +93,7 @@ public class Partie extends BasicGameState {
 			sbg.enterState(Game.perdu);
 		}else if(this.gagne){
 			sbg.addState(new Gagne(Game.gagne, this.difficulte, this.nomPartie, this.nbDeplacements));
-			sbg.getState(Game.gagne).init(container, sbg);
+			sbg.getState(Game.gagne);
 			sbg.enterState(Game.gagne);
 		}
 	}
@@ -114,18 +120,40 @@ public class Partie extends BasicGameState {
 		this.nbDeplacements = nbDeplacements;
 	}
 	
+	/**
+	 * Retourne le nombre de déplacement qu'a effectué le joueur
+	 * depuis le début de la partie
+	 * 
+	 * @return nombre de déplacement
+	 */
 	public int getNbDeplacement() {
 		return this.nbDeplacements;
 	}
 	
+	/**
+	 * Retourne l'instance du joueur de la partie
+	 * 
+	 * @return le joueur
+	 */
 	public Joueur getJoueur() {
 		return this.joueur;
 	}
 	
+	/**
+	 * Retourne l'instance de l'étage demandé
+	 * 
+	 * @param i - l'étage
+	 * @return l'instance de l'étage
+	 */
 	public Etage getEtage(int i) {
 		return this.immeuble[i];
 	}
 	
+	/**
+	 * Donne un état à la partie
+	 * 
+	 * @param gagne - true si la partie est gagné, false si la partie est perdu
+	 */
 	public void setEtatPartie(boolean gagne) {
 		this.gagne = gagne;
 		this.perdu = !gagne;

@@ -32,25 +32,27 @@ public class Piege extends Applicable implements Traversable {
 	 */
 	@Override
 	public boolean appliquerEffet(Personnage p) {
+		Joueur j = (Joueur)p;
 		if(this.actif) {
+			if((this.reference / 10) == 3 && j.haveItem(21)) {
+				return true;
+			}
+			
 			switch (this.getReference() / 10) {
-			case 0: case 1: case 2: case 3: case 4:
-				p.modifierPointsDeVie(-(this.getReference() % 10));
-				System.out.println("retirer pdv" + this.getReference() % 10);
+				case 0: case 1: case 2: case 3: case 4:
+					p.modifierPointsDeVie(-(this.getReference() % 10));
 				break;
-			case 5:
-				p.setEtat("fatigue", 50);
-				System.out.println("fatigue");
+				case 5:
+					p.setEtat("fatigue", 50);
 				break;
-			case 6:
-				p.setPointsDeVieMax(-(this.getReference() % 10));
-				System.out.println("retirer pdvMax" + this.getReference() % 10);
+				case 6:
+					p.setPointsDeVieMax(-(this.getReference() % 10));
 				break;
 			}
 		}
 		this.actif = false;
 		
-		if((this.getReference() / 10) != 3 || (this.getReference() / 10) != 4) {
+		if((this.getReference() / 10) != 3 && (this.getReference() / 10) != 4) {
 			if(this.actif) {
 				this.clef += 1;
 			}

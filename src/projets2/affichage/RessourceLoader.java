@@ -37,6 +37,10 @@ public class RessourceLoader {
 		imageDecors.put(1, new Image("ressources/images/tiles/murVertical.png"));
 		imageDecors.put(2, new Image("ressources/images/tiles/chaise.png"));
 		imageDecors.put(3, new Image("ressources/images/tiles/tableMetal.png"));
+		imageDecors.put(4, new Image("ressources/images/tiles/toilette.jpg"));
+		imageDecors.put(5, new Image("ressources/images/tiles/coffeeMachine.png"));
+		imageDecors.put(6, new Image("ressources/images/tiles/printer.png"));
+		imageDecors.put(99, new Image("ressources/images/tiles/gg.png"));
 		
 		imagePortesFermees.put(1, new Image("ressources/images/tiles/porteFermeeN.png"));
 		imagePortesFermees.put(2, new Image("ressources/images/tiles/porteFermeeE.png"));
@@ -52,12 +56,15 @@ public class RessourceLoader {
 		imageOutils.put(1, new Image("ressources/images/tiles/masqueGaz.png"));
 		imageOutils.put(2, new Image("ressources/images/tiles/piedBiche.png"));
 		
+		
 		imagePiegesActifs.put(0, new Image("ressources/images/tiles/mine.png"));
 		imagePiegesActifs.put(1, new Image("ressources/images/tiles/piegeOurs.png"));
 		imagePiegesActifs.put(2, new Image("ressources/images/tiles/piquesRentres.png"));
 		imagePiegesActifs.put(3, new Image("ressources/images/tiles/gaz.png"));
 		imagePiegesActifs.put(4, new Image("ressources/images/tiles/punaises.png"));
 		imagePiegesActifs.put(5, new Image("ressources/images/tiles/trou.png"));
+		
+		imagePiegesInactifs.put(0, new Image("ressources/images/tiles/bombe.png"));
 		imagePiegesInactifs.put(1, new Image("ressources/images/tiles/piegeLoup.png"));
 		imagePiegesInactifs.put(2, new Image("ressources/images/tiles/piquesSortis.png"));
 		
@@ -67,7 +74,7 @@ public class RessourceLoader {
 		imageConsommables.put(0, new Image("ressources/images/tiles/cafe.png"));
 		imageConsommables.put(1, new Image("ressources/images/tiles/sandwich.png"));
 		
-		imageSurprises.put(0, new Image("ressources/images/tiles/cadeau.png"));
+		imageSurprises.put(6, new Image("ressources/images/tiles/cadeau.png"));
 		
 		imageSols.put(0, new Image("ressources/images/tiles/sol.png"));
 		imageSols.put(1, new Image("ressources/images/tiles/Sol1.png"));
